@@ -47,6 +47,7 @@ function Content() {
       return false
     }
 
+    
     db.collection("users").doc(auth.currentUser.uid).collection('userPosts').orderBy("timestamp", "desc").onSnapshot(querySnapshot => {
       const posts = []
       
