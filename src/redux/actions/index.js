@@ -1,4 +1,4 @@
-import { SIGN_IN, ACCOUNT_UID, FIRST_NAME, LAST_NAME, AGE, EMAIL, PASSWORD, AVATAR } from '../actionTypes'
+import { SIGN_IN, ACCOUNT_UID, FIRST_NAME, LAST_NAME, EMAIL, AVATAR } from '../actionTypes'
 
 export const IsLogged = (isLogged) => {
   return {

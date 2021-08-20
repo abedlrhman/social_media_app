@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
 
 function Comment(props) {
 
@@ -9,7 +11,13 @@ function Comment(props) {
     <CommentContainer>
       <CommentHeader>
         <ProfileAvatar>
-          <img src={profileAvatar} alt='profile avatar' />
+        {
+            profileAvatar === undefined? (
+              <AccountCircleIcon style={{fontSize: 38}} />
+            ) : (
+              <img src={profileAvatar} alt='profile avatar' />
+            )
+          }
         </ProfileAvatar>
         <ProfileName>{profileName}</ProfileName>
       </CommentHeader>

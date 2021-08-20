@@ -1,4 +1,4 @@
-import {AGE, AVATAR, EMAIL, FIRST_NAME, LAST_NAME, PASSWORD} from '../actionTypes'
+import { AVATAR, EMAIL, FIRST_NAME, LAST_NAME} from '../actionTypes'
 
 const UserInfoReducer = (state = {}, action) => {
   switch (action.type) {

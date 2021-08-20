@@ -102,9 +102,9 @@ function Header() {
                         <IconTitle>Notifications</IconTitle>
                     </IconWrapper>
                 </SectionsIcons>
-                <Info>
+                <Info onClick={signOut}>
                     {avatarSrc?(
-                        <ProfileImg src={avatarSrc} onClick={signOut}/>
+                        <ProfileImg src={avatarSrc}/>
                     ) : (
                         <AccountCircleIcon />
                     )}
