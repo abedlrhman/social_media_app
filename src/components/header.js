@@ -179,6 +179,7 @@ const Icon = styled.div``
 const IconTitle = styled.span``
 
 const Info = styled.div`
+    cursor: pointer;
     width: 35px;
     overflow: hidden;
 `
