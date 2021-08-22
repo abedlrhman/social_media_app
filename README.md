@@ -4,7 +4,7 @@ what this project is :
 
 this project is a very simple social media application you can make a login and signup with special account and you can sign in with google 
 
-when you sign in you can make posts as you want and you can like comment and share it
+when you sign in you can make posts as you want and you can like and comment it
 
 it will be an upgraded versions in the future to this project but for now i think its good
 
