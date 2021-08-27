@@ -4,6 +4,7 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp'
 import SmsOutlinedIcon from '@material-ui/icons/SmsOutlined'
 import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined'
 import QueryBuilderOutlinedIcon from '@material-ui/icons/QueryBuilderOutlined'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MoreVertIcon from '@material-ui/icons/MoreVert'
 import { auth, db } from '../firebase'
 import Modal from '@material-ui/core/Modal'
@@ -86,13 +87,27 @@ function Post(props) {
       </Modal>
     )
   }
+
+  // let AvatarSrc;
+  
+  // if (userInfo.avatar) {
+  //   AvatarSrc = AccountCircleIcon;
+  // } else {
+  //   AvatarSrc = userInfo.avatar;
+  // }
   
   
   return (
     <Container>
       <PostHeader>
         <PostAvatar>
-          <img src={userInfo.avatar} alt='profile avatar' />
+          {
+            userInfo.avatar === undefined? (
+              <AccountCircleIcon style={{fontSize: 40}} />
+            ) : (
+              <img src={userInfo.avatar} alt='profile avatar' />
+            )
+          }
         </PostAvatar>
         <NameAndDate>
           <DisplayName>

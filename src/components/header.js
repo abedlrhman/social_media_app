@@ -11,18 +11,19 @@ import MailIcon from '@material-ui/icons/Mail'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { auth } from '../firebase'
-import { useDispatch } from 'react-redux'
-import {IsLogged, FirstName, LastName, UserAge, Email, Password, AccountUid, Avatar} from '../redux/actions'
+import { useDispatch, useSelector } from 'react-redux'
+import {IsLogged, FirstName, LastName, Email, AccountUid, Avatar} from '../redux/actions'
 import { useHistory } from 'react-router-dom'
 function Header() {
 
     const dispatch = useDispatch()
+    const avatar = useSelector(state => state?.UserInfo?.avatar)
     const history = useHistory()
 
     let avatarSrc;
 
     if(auth.currentUser){
-        avatarSrc = auth.currentUser.photoURL
+        avatarSrc = avatar
     } 
 
 
@@ -101,9 +102,9 @@ function Header() {
                         <IconTitle>Notifications</IconTitle>
                     </IconWrapper>
                 </SectionsIcons>
-                <Info>
+                <Info onClick={signOut}>
                     {avatarSrc?(
-                        <ProfileImg src={avatarSrc} onClick={signOut}/>
+                        <ProfileImg src={avatarSrc}/>
                     ) : (
                         <AccountCircleIcon />
                     )}
